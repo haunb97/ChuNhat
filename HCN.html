@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HCN</title>
+</head>
+<body>
+<canvas id="myCanvas" width="1000" height="500" style="border: 2px solid palevioletred ;"></canvas>
+<script>
+    function Rectangle(a, b) {
+        this.Dai = a ;
+        this.Rong = b ;
+        this.getDienTich = function () {
+            return (this.Dai*this.Rong) ;
+        }
+        this.ChuVi = function () {
+            return (this.Dai+this.Rong) ;
+        }
+         this.setDai = function (a) {
+             return this.Dai = a ;
+         }
+         this.setRong = function (b) {
+             return this.Rong = b ;
+         }
+
+    }
+    function createRec() {
+        var ctx = document.getElementById('myCanvas').getContext('2d');
+        // ctx.clearRect(0, 0,1368,768);
+        ctx.beginPath();
+        ctx.rect(300,150,hau.Dai,hau.Rong);
+        ctx.fillStyle = "rgb(100,33,79)" ;
+        ctx.fill();
+
+    }
+    let hau = new Rectangle(200,100);
+    hau.setDai(400);
+    hau.setRong(200);
+   document.write('<br />'+ 'dien tich ' + hau.getDienTich() + ' chu vi '+  hau.ChuVi());
+    createRec();
+
+</script>
+</body>
+</html>
